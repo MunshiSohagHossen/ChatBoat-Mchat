@@ -1,0 +1,38 @@
+
+<html>
+    <head>
+        <script>
+            know = {
+                "hello" : "hi",
+                "how are you?" : "good",
+				"what is your name?":"MChat",
+				"who has developed you?":"Munshi Sohag Hossen has developed me",
+				"can you give me his address?":" Visit here for details www.munshisohaginfo.com",
+				"any team member?": " Yes.. Qadam Ali is the team member",
+                "thank you":"Welcome",
+				
+                "ok" : ":)"
+             };
+            function talk() {
+                var user = document.getElementById("userBox").value;
+                document.getElementById("userBox").value = "";
+                document.getElementById("chatLog").innerHTML += user+"<br>";
+                if (user in know) {
+                    document.getElementById("chatLog").innerHTML += know[user]+"<br>";
+                } else {
+                    document.getElementById("chatLog").innerHTML += "I don't understand...<br>";
+					alert("Would you plz try this question -- 1.hello  2.how are you 3.what is your name? 4.who has developed you? 5.can you give me his address 6.any team member? 7.thank you ");
+				    
+                }
+            } 
+        </script>
+    </head>
+    <body>   
+	        <h4> Plz ask the below question to the chatboat<h4>
+	        <p> <br> 1.hello <br>2.how are you?<br>3.what is your name?<br>4.who has developed you?<br> 5.can you give me his address?<br>6.any team member? <br>7.thank you </p>
+	
+	
+        <h2 id="chatLog" style="color:blue;position:relative;right:-600px;size:50px;">- - Virtual MChat - -<br></h2>
+        <input id="userBox" placeholder="Type here" type="text" style="color:blue; position:relative;right:-600px;"onkeydown="if (event.keyCode == 13) {talk()}">
+    </body>
+</html>
